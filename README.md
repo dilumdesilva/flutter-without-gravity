@@ -1,7 +1,6 @@
 # Flutter without Gravity
 
-What if the gap between your app idea and a running Flutter app was just few prompts?
-In this talk, we’ll design a mobile app using Google Stitch an AI tool that turns words into polished UI then hand those designs to Google Antigravity, an agent-first IDE that builds and verifies a working Flutter app live. No boilerplate. No manual widget trees. Just design intent in, working app out.
+What if the gap between your app idea and a running Flutter app was just few prompts? In this talk, we designed a mobile app using Google Stitch an AI tool that turns words into polished UI then handed those designs to Google Antigravity, an agent-first IDE that builds and verifies a working Flutter app live. No boilerplate. No manual widget trees. Just design intent in, working app out.
 
 [![Built with AI](https://img.shields.io/badge/Built%20with-AI-blueviolet)](#)
 
