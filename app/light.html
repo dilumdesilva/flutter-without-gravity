@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AKL Tech - Modern Tech Events</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;800&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                "on-error": "#ffffff",
+                "inverse-on-surface": "#ecf0ff",
+                "on-primary-fixed-variant": "#00429b",
+                "on-tertiary-container": "#fffbff",
+                "tertiary-container": "#c35200",
+                "outline-variant": "#c2c6d7",
+                "primary-fixed": "#d9e2ff",
+                "surface-bright": "#f9f9ff",
+                "primary-fixed-dim": "#b0c6ff",
+                "on-primary-fixed": "#001945",
+                "on-surface": "#101c2e",
+                "surface-variant": "#d7e3fc",
+                "surface-container-low": "#f0f3ff",
+                "on-primary-container": "#fefcff",
+                "on-secondary": "#ffffff",
+                "on-primary": "#ffffff",
+                "tertiary-fixed": "#ffdbcb",
+                "surface-container-lowest": "#ffffff",
+                "surface-dim": "#cfdaf3",
+                "on-tertiary-fixed": "#341100",
+                "inverse-primary": "#b0c6ff",
+                "on-background": "#101c2e",
+                "on-tertiary-fixed-variant": "#793000",
+                "tertiary": "#9b4000",
+                "secondary-fixed": "#d9e2ff",
+                "tertiary-fixed-dim": "#ffb692",
+                "surface-tint": "#0058ca",
+                "primary": "#0056c5",
+                "on-surface-variant": "#424655",
+                "inverse-surface": "#253144",
+                "surface-container": "#e7eeff",
+                "primary-container": "#0f6df3",
+                "on-secondary-container": "#344d84",
+                "secondary-fixed-dim": "#b0c6ff",
+                "secondary": "#445d95",
+                "error": "#ba1a1a",
+                "surface": "#f9f9ff",
+                "surface-container-high": "#dfe8ff",
+                "on-secondary-fixed": "#001945",
+                "secondary-container": "#a7c0ff",
+                "on-error-container": "#93000a",
+                "outline": "#727786",
+                "surface-container-highest": "#d7e3fc",
+                "error-container": "#ffdad6",
+                "background": "#f9f9ff",
+                "on-tertiary": "#ffffff",
+                "on-secondary-fixed-variant": "#2b457c"
+              },
+              fontFamily: {
+                "headline": ["Space Grotesk"],
+                "body": ["Inter"],
+                "label": ["Inter"]
+              },
+              borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "full": "9999px"},
+              boxShadow: {
+                'premium': '0 20px 50px -12px rgba(10, 22, 40, 0.12), 0 10px 15px -5px rgba(10, 22, 40, 0.04)',
+                'premium-hover': '0 30px 60px -12px rgba(41, 121, 255, 0.25), 0 15px 20px -5px rgba(41, 121, 255, 0.1)'
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .chip-gradient {
+            background: linear-gradient(135deg, #2979FF 0%, #0A1628 100%);
+        }
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+<body class="bg-background font-body text-on-background selection:bg-secondary-container">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-white/70 dark:bg-[#0A1628]/70 backdrop-blur-xl border-b border-outline/5">
+<div class="flex items-center justify-between px-6 py-4 w-full max-w-7xl mx-auto">
+<div class="flex items-center gap-2">
+<button class="p-2 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors scale-95 active:duration-150">
+<span class="material-symbols-outlined text-[#2979FF]">menu</span>
+</button>
+<h1 class="font-headline font-bold tracking-tight text-xl text-[#2979FF]">
+                    What's happening in AKL
+                </h1>
+</div>
+<div class="flex items-center gap-2">
+<button class="p-2 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors scale-95 active:duration-150">
+<span class="material-symbols-outlined text-[#2979FF]">search</span>
+</button>
+</div>
+</div>
+</header>
+<main class="pt-24 pb-32 max-w-7xl mx-auto px-6 space-y-6">
+<!-- Search Bar Section -->
+<section>
+<div class="relative group max-w-2xl mx-auto">
+<div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-outline group-focus-within:text-primary transition-colors">search</span>
+</div>
+<input class="w-full bg-surface-container-low border border-outline/10 rounded-2xl py-4 pl-12 pr-4 text-on-surface placeholder:text-outline focus:ring-2 focus:ring-primary focus:bg-surface-container-lowest transition-all duration-300 shadow-sm" placeholder="Search events, speakers, or topics..." type="text"/>
+</div>
+</section>
+<!-- Hot Topics (Chips) -->
+<section>
+<div class="flex flex-wrap gap-2 justify-start">
+<span class="px-4 py-2 bg-[#2979FF] text-white rounded-full text-sm font-semibold tracking-wide flex items-center gap-2 shadow-lg shadow-[#2979FF]/30 cursor-pointer">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">check</span>
+                    AI
+                </span>
+<span class="px-4 py-2 bg-[#0A1628]/5 dark:bg-white/5 text-slate-600 dark:text-slate-300 border border-outline/10 rounded-full text-sm font-medium hover:bg-[#2979FF]/10 transition-colors cursor-pointer">Flutter</span>
+<span class="px-4 py-2 bg-[#0A1628]/5 dark:bg-white/5 text-slate-600 dark:text-slate-300 border border-outline/10 rounded-full text-sm font-medium hover:bg-[#2979FF]/10 transition-colors cursor-pointer">Cloud</span>
+<span class="px-4 py-2 bg-[#0A1628]/5 dark:bg-white/5 text-slate-600 dark:text-slate-300 border border-outline/10 rounded-full text-sm font-medium hover:bg-[#2979FF]/10 transition-colors cursor-pointer">DevOps</span>
+<span class="px-4 py-2 bg-[#0A1628]/5 dark:bg-white/5 text-slate-600 dark:text-slate-300 border border-outline/10 rounded-full text-sm font-medium hover:bg-[#2979FF]/10 transition-colors cursor-pointer">Cybersecurity</span>
+<span class="px-4 py-2 bg-[#0A1628]/5 dark:bg-white/5 text-slate-600 dark:text-slate-300 border border-outline/10 rounded-full text-sm font-medium hover:bg-[#2979FF]/10 transition-colors cursor-pointer">Web3</span>
+</div>
+</section>
+<!-- Upcoming Events Section -->
+<section>
+<div class="mb-6 space-y-3 mb-6 space-y-4">
+<h2 class="font-headline text-3xl font-bold tracking-tight text-[#0A1628]">Upcoming events</h2>
+<a class="inline-flex items-center gap-2 px-4 py-2 border border-primary/20 bg-primary/5 text-primary rounded-xl text-xs font-bold hover:bg-primary hover:text-white transition-all w-fit" href="#">
+<span class="material-symbols-outlined text-sm">calendar_month</span>
+                    View Calendar
+                </a>
+</div>
+<div class="flex overflow-x-auto gap-4 pb-4 hide-scrollbar snap-x">
+<!-- Event Card 1 -->
+<div class="flex-none w-72 snap-start">
+<div class="bg-surface-container-lowest rounded-3xl overflow-hidden group transition-all duration-500 border border-outline/5 h-full flex flex-col">
+<div class="h-48 overflow-hidden relative">
+<img alt="Tech Summit" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDfX56VoTbxKHc_oWKrRGn5GB8gtdukrGA06BK7VbwyyRiVDzUn4HRpcimJBuIc0PnjqULVeDjMP8W-Dbi1vOrkz6mhpLq3qxZAlvkfUtwKYEOmsDrfhZOwa7VRrOzHtcQBv8xHdHzzionRG-_cDe2L2B6s9S8sdG_hJYLgK8ZAK_g6dypiSC_-vzRVID5oGWJ47843s_I90KCCpbgxzynj5bvzhOBSMyMuzBVRqvy_pS2rJRJVJLElgt85cf_HkgTdprFqMxJ3nx8"/>
+<div class="absolute top-3 left-3">
+<span class="px-2 py-1 bg-purple-500/10 text-purple-600 border border-purple-500/20 backdrop-blur-md rounded-lg text-[9px] font-bold uppercase tracking-wider">Conference</span>
+</div>
+<div class="absolute top-3 right-3 px-2.5 py-1 bg-white/95 backdrop-blur rounded-lg shadow-md border border-outline/5">
+<span class="font-headline font-bold text-sm text-primary">OCT 12</span>
+</div>
+<div class="absolute bottom-3 left-3 flex items-center gap-1 px-2.5 py-1 bg-black/40 backdrop-blur-md rounded-full text-white text-[10px] font-semibold">
+<span class="material-symbols-outlined text-xs" style='font-variation-settings: "FILL" 1;'>group</span>
+                                428 attending
+                            </div>
+</div>
+<div class="p-4 flex flex-col flex-grow">
+<h3 class="font-headline text-xl font-bold mb-2 group-hover:text-primary transition-colors leading-tight">Auckland Cloud Summit</h3>
+<div class="flex items-center gap-2 text-on-surface-variant text-xs mb-6">
+<span class="material-symbols-outlined text-sm text-primary">location_on</span>
+                                SkyCity Convention Centre
+                            </div>
+<div class="mt-auto flex justify-between items-center pt-3 border-t border-outline/5">
+<span class="text-[9px] font-extrabold uppercase tracking-widest text-outline">Technical Focus</span>
+<button class="p-2.5 rounded-xl bg-primary/5 text-primary hover:bg-primary hover:text-white transition-all shadow-sm">
+<span class="material-symbols-outlined text-lg">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Event Card 2 -->
+<div class="flex-none w-72 snap-start">
+<div class="bg-surface-container-lowest rounded-3xl overflow-hidden group transition-all duration-500 border border-outline/5 h-full flex flex-col">
+<div class="h-48 overflow-hidden relative">
+<img alt="DevOps Days" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBPiciuCkZPVuWORKhtiqGhw7CGwoVvm6EdZgGyo4KwHPkCpfItrHmEOqZx3TchnRLPEaY7_7w0CChsbXgEjOkBYFsr4i4s0HztT2WuRCqYCmFlTVmluFS-oOD3RhNkyANoERo_KdkX8Aa1ckrS0-JywcCUP3AQ0woT5tKqn1KMO66ptYrf7OIHm81pc5FzVnDubQJg0EmtIvRvbGJO6zIie5eY1mpdmSuUJG5ogBesKzYRLOvXEnQBzfImccPArppW07fn521Mcw"/>
+<div class="absolute top-3 left-3">
+<span class="px-2 py-1 bg-emerald-500/10 text-emerald-600 border border-emerald-500/20 backdrop-blur-md rounded-lg text-[9px] font-bold uppercase tracking-wider">Meetup</span>
+</div>
+<div class="absolute top-3 right-3 px-2.5 py-1 bg-white/95 backdrop-blur rounded-lg shadow-md border border-outline/5">
+<span class="font-headline font-bold text-sm text-primary">OCT 15</span>
+</div>
+<div class="absolute bottom-3 left-3 flex items-center gap-1 px-2.5 py-1 bg-black/40 backdrop-blur-md rounded-full text-white text-[10px] font-semibold">
+<span class="material-symbols-outlined text-xs" style='font-variation-settings: "FILL" 1;'>group</span>
+                                127 attending
+                            </div>
+</div>
+<div class="p-4 flex flex-col flex-grow">
+<h3 class="font-headline text-xl font-bold mb-2 group-hover:text-primary transition-colors leading-tight">DevOps Days NZ</h3>
+<div class="flex items-center gap-2 text-on-surface-variant text-xs mb-6">
+<span class="material-symbols-outlined text-sm text-primary">location_on</span>
+                                Shed 10, Quay Street
+                            </div>
+<div class="mt-auto flex justify-between items-center pt-3 border-t border-outline/5">
+<span class="text-[9px] font-extrabold uppercase tracking-widest text-outline">Culture</span>
+<button class="p-2.5 rounded-xl bg-primary/5 text-primary hover:bg-primary hover:text-white transition-all shadow-sm">
+<span class="material-symbols-outlined text-lg">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Speakers Section -->
+<section>
+<h2 class="font-headline text-3xl font-bold tracking-tight text-[#0A1628] mb-6 mt-12">Speakers in town</h2>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-x-6 gap-y-8">
+<!-- Speaker 1 -->
+<div class="flex flex-col items-center text-center">
+<div class="relative mb-3 group">
+<div class="absolute -inset-2 bg-gradient-to-tr from-[#2979FF] to-[#0A1628] rounded-full opacity-0 group-hover:opacity-100 transition-opacity blur-lg duration-500"></div>
+<img alt="Marcus Chen" class="relative w-28 h-28 rounded-full object-cover border-2 border-white shadow-premium p-0.5 bg-gradient-to-tr from-[#2979FF] to-[#0A1628]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBpcpzCxenGJUUiEwllINW_z981ydkNZeI4lS898HvwTXzv8K14hJjAGpHzSwB1hBJ6L4f1NuSZoY0kS9ipEtzTFMRjtHp3Zdc_NFy_cRKgBz5nYCBnPcJRdiRkmxok58SdglTwImwPRX_WPtvD0Qtt6idERcDstieZ-IAM2DOTs-bhDLNWU9fzWIefcpQLWAxcAimWKNecsejSNHhuKZx9yMwd7d9k_QvS66KmyNUHfk99-WHIHl-PISXce3yz_QUCIQkbA7BB-9c"/>
+</div>
+<h4 class="font-headline font-bold text-lg text-on-background">Marcus Chen</h4>
+<p class="text-[11px] text-primary font-semibold mt-0.5">Scaling K8s at Netflix</p>
+</div>
+<!-- Speaker 2 -->
+<div class="flex flex-col items-center text-center">
+<div class="relative mb-3 group">
+<div class="absolute -inset-2 bg-gradient-to-tr from-[#2979FF] to-[#0A1628] rounded-full opacity-0 group-hover:opacity-100 transition-opacity blur-lg duration-500"></div>
+<img alt="Sarah Jenkins" class="relative w-28 h-28 rounded-full object-cover border-2 border-white shadow-premium p-0.5 bg-gradient-to-tr from-[#2979FF] to-[#0A1628]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBcr6loNYQrDM7aC2GuTRyme9wD-7DH81GjlVygja0Twd8Ml_kyMM9W10RSi5tnaouoftHKI3lrfXHJKJ4RCsad5x9BwGidi_UHN9xY2sMxLI78t7yPrtih1gH7WHMpkGcmQlSlt9_cfUnJX9RvCuPOPYLqzb7JHxXhLvS3MKRpLFpjObNgMk-x5U06mhi5P4EHlhRY8vK4-JI8MX1w-94thQRPh_Z-C_cYyPvaqbz5wIgg7KxbTj8wgh3pC3wBMR7Lku7dqeAW3pI"/>
+</div>
+<h4 class="font-headline font-bold text-lg text-on-background">Sarah Jenkins</h4>
+<p class="text-[11px] text-primary font-semibold mt-0.5">Future of WebAssembly</p>
+</div>
+<!-- Speaker 3 -->
+<div class="flex flex-col items-center text-center">
+<div class="relative mb-3 group">
+<div class="absolute -inset-2 bg-gradient-to-tr from-[#2979FF] to-[#0A1628] rounded-full opacity-0 group-hover:opacity-100 transition-opacity blur-lg duration-500"></div>
+<img alt="David Park" class="relative w-28 h-28 rounded-full object-cover border-2 border-white shadow-premium p-0.5 bg-gradient-to-tr from-[#2979FF] to-[#0A1628]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmiOeLbKqVknIdtg0ExDMj4kOxW3Ip6CJ2rep6iqBtUnObcR5DYFwIYO0MMdlhD71Y18oE3ffsgAw_zal80PP4SnZJf_n3qKzm48HYNYJsLZVzw6frcnI_mDYu8Xcl2sB9tcynQwbirSrfVIRP2DO3RuwLlus2G1IQEJv_p3EiZVnVGcXTPglJ-YUf51pUHWQcJvlC8zQFC4c07J2NvyC1f6OHxR-4e794QIwhx-rt3TwJt_zFLpbFmyxnj7WH_1I9-PQiR4CrV60"/>
+</div>
+<h4 class="font-headline font-bold text-lg text-on-background">David Park</h4>
+<p class="text-[11px] text-primary font-semibold mt-0.5">Security First Flutter</p>
+</div>
+<!-- Speaker 4 -->
+<div class="flex flex-col items-center text-center">
+<div class="relative mb-3 group">
+<div class="absolute -inset-2 bg-gradient-to-tr from-[#2979FF] to-[#0A1628] rounded-full opacity-0 group-hover:opacity-100 transition-opacity blur-lg duration-500"></div>
+<img alt="Elena Rossi" class="relative w-28 h-28 rounded-full object-cover border-2 border-white shadow-premium p-0.5 bg-gradient-to-tr from-[#2979FF] to-[#0A1628]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBrF5NpVmjaCkpgJgQBvJXM8O4JWjcla1y5hy_BFwpkPjSRzJE4f5cK33ksJEcn_uD5HbKIrIVa22xLAN1xkRsvqN9vO8npykvkE9J4AUhWxOZKfWhyclrRJAPGzO6fm205aFuBCZjNiAfp-B1tGGtdV6VeeVVqd82VwQ0buL-3cE8rL77VpXuQV1Nj-1QCD6P2k7x0fH-JPUvjxW2RivnByYLF1eqdeNqsFp0_VWv8r6qF09tV3OPZ0w2bNyWEGuMAu49BBuAtNw"/>
+</div>
+<h4 class="font-headline font-bold text-lg text-on-background">Elena Rossi</h4>
+<p class="text-[11px] text-primary font-semibold mt-0.5">Quantum Computing 101</p>
+</div>
+</div>
+</section>
+<!-- Community Pulse Section -->
+<section>
+<h2 class="font-headline text-3xl font-bold tracking-tight text-[#0A1628] mb-6 mt-12">Community pulse</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="md:col-span-2 bg-gradient-to-br from-[#0A1628] via-[#0A1628] to-[#2979FF] rounded-3xl p-8 text-white relative overflow-hidden group shadow-premium hover:shadow-premium-hover transition-all duration-500">
+<div class="relative z-10">
+<span class="px-2.5 py-1 bg-white/10 backdrop-blur-md border border-white/20 rounded-lg text-[10px] font-bold tracking-widest uppercase mb-4 inline-block">Featured Venue</span>
+<h3 class="font-headline text-3xl font-bold mb-3">The Innovation Precinct</h3>
+<p class="text-white/70 max-w-md mb-8 leading-relaxed text-base">Experience Auckland's most advanced event space, featuring 10Gbps mesh and fully modular workshop zones.</p>
+<button class="bg-white text-[#0A1628] px-8 py-3 rounded-2xl font-bold text-xs uppercase tracking-wider hover:bg-surface-bright transition-all shadow-xl hover:-translate-y-1">Book a Tour</button>
+</div>
+<span class="material-symbols-outlined absolute -bottom-12 -right-12 text-[240px] text-white/5 rotate-12 group-hover:rotate-0 transition-transform duration-1000">apartment</span>
+</div>
+<div class="bg-tertiary-container rounded-3xl p-8 text-white flex flex-col justify-between shadow-premium hover:shadow-premium-hover transition-all duration-500 relative overflow-hidden">
+<div class="relative z-10">
+<span class="material-symbols-outlined text-5xl mb-6" style='font-variation-settings: "FILL" 1;'>forum</span>
+<h3 class="font-headline text-2xl font-bold">Slack Channel</h3>
+<p class="text-white/80 mt-2 leading-relaxed text-base">Join 4,500+ local devs chatting daily in #akl-tech.</p>
+</div>
+<button class="w-full bg-white/10 border border-white/30 hover:bg-white/20 transition-all py-3 rounded-2xl font-bold mt-8 shadow-sm relative z-10 text-sm">Get Invite</button>
+<span class="material-symbols-outlined absolute -top-8 -right-8 text-[140px] text-white/5 -rotate-12">alternate_email</span>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 bg-white/90 dark:bg-[#0A1628]/90 backdrop-blur-2xl border-t border-outline/5">
+<div class="flex justify-around items-center px-4 pb-6 pt-3">
+<!-- Home (Active) -->
+<a class="flex flex-col items-center justify-center bg-[#2979FF]/10 text-[#2979FF] rounded-2xl px-5 py-2 transition-all shadow-sm" href="#">
+<span class="material-symbols-outlined text-xl" style='font-variation-settings: "FILL" 1;'>home</span>
+<span class="font-body text-[9px] font-bold uppercase tracking-widest mt-1">Home</span>
+</a>
+<!-- Search -->
+<a class="flex flex-col items-center justify-center text-slate-400 hover:text-[#2979FF] transition-all px-4 py-2" href="#">
+<span class="material-symbols-outlined text-xl">search</span>
+<span class="font-body text-[9px] font-medium uppercase tracking-widest mt-1">Search</span>
+</a>
+<!-- Saved -->
+<a class="flex flex-col items-center justify-center text-slate-400 hover:text-[#2979FF] transition-all px-4 py-2" href="#">
+<span class="material-symbols-outlined text-xl">bookmark</span>
+<span class="font-body text-[9px] font-medium uppercase tracking-widest mt-1">Saved</span>
+</a>
+<!-- Profile -->
+<a class="flex flex-col items-center justify-center text-slate-400 hover:text-[#2979FF] transition-all px-4 py-2" href="#">
+<span class="material-symbols-outlined text-xl">person</span>
+<span class="font-body text-[9px] font-medium uppercase tracking-widest mt-1">Profile</span>
+</a>
+</div>
+</nav>
+<!-- FAB -->
+</body></html>
