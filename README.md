@@ -6,6 +6,11 @@
   <a href="https://dilumdesilva.dev/docs/flutter_without_gravity.pdf"><img src="https://img.shields.io/badge/%F0%9F%93%96_View_Slides-FFD700?style=for-the-badge&logoColor=black" alt="View Slides" /></a>
 </p>
 
+<p align="center">
+  <a href="https://github.com/dilumdesilva/flutter-without-gravity/blob/main/talk-assets/redeem_cloud_credits.pdf"><img src="https://img.shields.io/badge/%F0%9F%93%96_Steps_to_Redeem_Credits-FFD700?style=for-the-badge&logoColor=black" alt="Steps to Redeem Cloud Credits" /></a>
+</p>
+
+
 ## Tech Stack & Resources
 
 | Tool | Description | Link |
